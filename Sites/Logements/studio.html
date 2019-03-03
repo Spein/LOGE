@@ -46,6 +46,10 @@
         flex-direction: column;
     }
     
+    .block-title {
+        display: none;
+    }
+    
     .vignette {
         height: 24vh;
         margin: 0.1%;
@@ -201,17 +205,17 @@
     }
     
     .primary,
-    .thumbnails {
+    .miniatures {
         display: table-cell;
     }
     
-    .thumbnails {
+    .miniatures {
         display: flex;
         flex-wrap: wrap;
         width: 38%;
     }
     
-    .thumbnail {
+    .miniature {
         border: 0;
         margin: 0;
         flex-wrap: nowrap;
@@ -233,12 +237,12 @@
         border-color: #add168;
     }
     
-    .thumbnail:hover .thumbnail-image,
-    .selected .thumbnail-image {
+    .miniature:hover .miniature-image,
+    .selected .miniature-image {
         border: 4px solid #032f5d;
     }
     
-    .thumbnail-image {
+    .miniature-image {
         width: 16vw;
         display: flex;
         flex-grow: 1;
@@ -292,28 +296,6 @@
 </div>
 
 <h4>Plusieurs types de logements sont disponibles mais NE SONT PAS accessibles à tous</h4>
-
-<div class="image-gallery">
-    <aside class="thumbnails">
-        <a class="selected thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4076.JPEG?itok=PQ2CfMzr"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4076.JPEG?itok=PQ2CfMzr )"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN059.jpg?itok=hk0dX57O"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN059.jpg?itok=hk0dX57O)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4079.JPEG?itok=9ljj3Cvk"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4079.JPEG?itok=9ljj3Cvk)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN115.jpg?itok=8HU1OFp-"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN115.jpg?itok=8HU1OFp-)"></div>
-        </a>
-    </aside>
-    <main class="primary" style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs');"></main>
-</div>
-
 <p style="text-align: justify;"><strong>Les studios</strong>, pour c&eacute;libataire ou couple, sont meubl&eacute;s et &eacute;quip&eacute;s d'un coin cuisine et d'une salle de douche avec WC.</p>
 <p>Ils sont réservés <strong>prioritairement</strong> aux étudiants<strong>&nbsp;de deuxième et troisième cycles.</strong></p>
 
@@ -348,12 +330,34 @@
 </div>
 
 <p>* hors connexion Internet</p>
+<div class="image-gallery">
+    <aside class="miniatures">
+        <a class="selected miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4076.JPEG?itok=PQ2CfMzr"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4076.JPEG?itok=PQ2CfMzr )"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN059.jpg?itok=hk0dX57O"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN059.jpg?itok=hk0dX57O)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4079.JPEG?itok=9ljj3Cvk"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/DSC_4079.JPEG?itok=9ljj3Cvk)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN115.jpg?itok=8HU1OFp-"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN115.jpg?itok=8HU1OFp-)"></div>
+        </a>
+    </aside>
+    <main class="primary" style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs');"></main>
+</div>
+
+
 <script>
-    $('.thumbnail').on('click', function() {
+    $('.miniature').on('click', function() {
         var clicked = $(this);
         var newSelection = clicked.data('big');
         var $img = $('.primary').css("background-image", "url(" + newSelection + ")");
-        clicked.parent().find('.thumbnail').removeClass('selected');
+        clicked.parent().find('.miniature').removeClass('selected');
         clicked.addClass('selected');
         $('.primary').empty().append($img.hide().fadeIn('slow'));
     });

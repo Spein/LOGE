@@ -69,6 +69,10 @@
         flex-grow: 1;
     }
     
+    .col-md-12>h1 {
+        display: none;
+    }
+    
     .second-row:focus {
         background-color: rgb(146, 193, 56) !important
     }
@@ -103,18 +107,8 @@
         font-style: normal;
     }
     
-    .block-title>p {
-        text-align: right;
-    }
-    
-    .block-title .abbreviation {
-        text-transform: uppercase;
-        font-weight: 900;
-        color: rgb(3, 47, 93);
-        font-family: "Montserrat", sans-serif;
-        font-size: 16px;
-        letter-spacing: 1.9px;
-        text-align: right;
+    .block-title {
+        display: none;
     }
     
     .page-body p,
@@ -198,23 +192,23 @@
     }
     
     #kot:hover {
-        background-image: url('https://www.kotalouvain.be/img/louvain/residence/lovano-ladeuze/miniloft-large.jpg?v55');
-        background-position-y: 69%;
+        background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kot/DSC_1332.JPEG?itok=M6WiXhD_');
+        background-position-y: 41%;
     }
     
     #kap:hover {
-        background-image: url('https://www.generation-campus.be/medias/images/residences-services/lovano-campus/mini-flat/IMG-lovano-mini-flat-01.jpg');
+        background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS');
         background-position-y: 77%;
     }
     
     #studio:hover {
-        background-image: url('https://www.kotalouvain.be/img/louvain/residence/lovano-ladeuze/miniloft-large.jpg?v55');
-        background-position-y: 18%;
+        background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/studio/UCL%20vie%20LLN062.jpg?itok=YcjrcuMs');
+        background-position-y: 77%;
     }
     
     #appart:hover {
-        background-image: url('https://www.generation-campus.be/uploads/slider/28/kot-louvain-la-neuve-4.jpg');
-        background-position-y: 18%;
+        background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/appart/Mai_2013_7060.JPEG?itok=-DQMMKFr');
+        background-position-y: 69%;
     }
     
     .logement:hover span {
@@ -259,8 +253,12 @@
 <div class="rangee section" data-section="belge international erasmus boursier professeur">
     <h5>Quels types de logements ?</h5>
     <h4>Plusieurs types de logements sont disponibles mais pas accessibles à tous.</h4>
-    <div class="rangee contenu" style="width: 100%;flex-wrap:wrap"><button class="contenu logement" data-section="belge international erasmus boursier professeur" id="kot"><span>Chambre en appartement communautaire</span></button><button class="contenu logement" data-section="belge international erasmus" id="kap"><span>Chambre dans un kot à projet</span></button>
-        <button class="contenu logement" data-section="belge international boursier professeur" id="studio"><span>Studio</span></button><button class="contenu logement" data-section="belge international boursier professeur" id="appart"><span>Appartement</span></button></div>
+    <div class="rangee contenu" style="width: 100%;flex-wrap:wrap"><button onclick="window.location.href='https://uclouvain.be/fr/etudier/logement/chambre-en-appartement-communautaire.html'" class="contenu logement" data-section="belge international erasmus boursier professeur" id="kot"><span>Chambre en appartement communautaire</span></button>
+        <button
+            onclick="window.location.href='https://uclouvain.be/fr/etudier/logement/chambre-dans-un-kot-a-projet.html'" class="contenu logement" data-section="belge international erasmus" id="kap"><span>Chambre en projet d'animation</span></button>
+            <button onclick="window.location.href='https://uclouvain.be/fr/etudier/logement/studio.html'" class="contenu logement" data-section="belge international boursier professeur" id="studio"><span>Studio</span></button><button onclick="window.location.href='https://uclouvain.be/fr/etudier/logement/logement-pour-famille.html'"
+                class="contenu logement" data-section="belge international boursier professeur" id="appart"><span>Appartement</span></button>
+    </div>
     <div class="rangee contenu">
         <div class="rangee contenu">
             <h6 id="warning">Les bacheliers n'ont pas accès à ce logement</h6>
@@ -324,8 +322,8 @@
             </ul>
         </div>
     </div>
-    <button data-section="contenu belge international erasmus boursier professeur" class="contenu demande-en-ligne" onclick="window.location.href='http://wwwsapprd.sipr.ucl.ac.be/re/bxl/index.html?sap-ui-language=FR'">Demande de logements en ligne</button>
-</div>
+    <!--     <button data-section="contenu belge international erasmus boursier professeur" class="contenu demande-en-ligne" onclick="window.location.href='http://wwwsapprd.sipr.ucl.ac.be/re/bxl/index.html?sap-ui-language=FR'">Demande de logements en ligne</button>
+ --></div>
 
 <div class="rangee" style="justify-content: flex-end;">
     <div class="rangee" style="flex-direction: column;margin-top: 5%;flex-wrap: wrap;">

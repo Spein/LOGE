@@ -11,6 +11,10 @@
         display: flex;
     }
     
+    .block-title {
+        display: none;
+    }
+    
     .section {
         display: none;
         flex-direction: column;
@@ -201,17 +205,17 @@
     }
     
     .primary,
-    .thumbnails {
+    .miniatures {
         display: table-cell;
     }
     
-    .thumbnails {
+    .miniatures {
         display: flex;
         flex-wrap: wrap;
         width: 38%;
     }
     
-    .thumbnail {
+    .miniature {
         border: 0;
         margin: 0;
         flex-wrap: nowrap;
@@ -233,12 +237,12 @@
         border-color: #add168;
     }
     
-    .thumbnail:hover .thumbnail-image,
-    .selected .thumbnail-image {
+    .miniature:hover .miniature-image,
+    .selected .miniature-image {
         border: 4px solid #032f5d;
     }
     
-    .thumbnail-image {
+    .miniature-image {
         width: 16vw;
         display: flex;
         flex-grow: 1;
@@ -292,26 +296,6 @@
 </div>
 
 <h4>Plusieurs types de logements sont disponibles mais NE SONT PAS accessibles à tous</h4>
-<div class="image-gallery">
-    <aside class="thumbnails">
-        <a class="selected thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/20170817_TrocDeKot_Haulot_037.JPEG?itok=FWemHClu"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/20170817_TrocDeKot_Haulot_037.JPEG?itok=FWemHClu)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN040.jpg?itok=vMb_vwrD"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN040.jpg?itok=vMb_vwrD)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_1208.JPEG?itok=kpdfNjEg"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_1208.JPEG?itok=kpdfNjEg)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_5383.JPEG?itok=RCb3sswN"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_5383.JPEG?itok=RCb3sswN)"></div>
-        </a>
-        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS"><br>
-            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS)"></div>
-        </a>
-    </aside>
-    <main class="primary" style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS');"></main>
-</div>
 <p>Rassembl&eacute;s dans un appartement communautaire, autour d&rsquo;un projet commun, les &eacute;tudiants partagent une vie particuli&egrave;rement intense, qui demande un investissement collectif et une adaptation &agrave; la vie universitaire.</p>
 <p>C&rsquo;est pourquoi l&rsquo;int&eacute;gration dans ce type de logement se fera dans les meilleures conditions <strong>&agrave; partir de la deuxi&egrave;me ann&eacute;e d&rsquo;&eacute;tudes.</strong></p>
 <p><strong><em>Les kots &agrave; projet (KAP'S)</em></strong></p>
@@ -356,12 +340,33 @@
 </div>
 <p>* avec possibilité de contrat pendant les vacances&nbsp;</p>
 <p>** hors connexion Internet</p>
+<div class="image-gallery">
+    <aside class="miniatures">
+        <a class="selected miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/20170817_TrocDeKot_Haulot_037.JPEG?itok=FWemHClu"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/20170817_TrocDeKot_Haulot_037.JPEG?itok=FWemHClu)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN040.jpg?itok=vMb_vwrD"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN040.jpg?itok=vMb_vwrD)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_1208.JPEG?itok=kpdfNjEg"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_1208.JPEG?itok=kpdfNjEg)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_5383.JPEG?itok=RCb3sswN"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/DSC_5383.JPEG?itok=RCb3sswN)"></div>
+        </a>
+        <a class="miniature" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS"><br>
+            <div class="miniature-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS)"></div>
+        </a>
+    </aside>
+    <main class="primary" style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/kap/UCL%20vie%20LLN031.jpg?itok=H910i3xS');"></main>
+</div>
+
 <script>
-    $('.thumbnail').on('click', function() {
+    $('.miniature').on('click', function() {
         var clicked = $(this);
         var newSelection = clicked.data('big');
         var $img = $('.primary').css("background-image", "url(" + newSelection + ")");
-        clicked.parent().find('.thumbnail').removeClass('selected');
+        clicked.parent().find('.miniature').removeClass('selected');
         clicked.addClass('selected');
         $('.primary').empty().append($img.hide().fadeIn('slow'));
     });
