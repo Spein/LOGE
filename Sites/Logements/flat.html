@@ -1,0 +1,361 @@
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" />
+<style type="text/css">
+    .rangee {
+        justify-content: space-between;
+        align-items: center;
+        -webkit-animation: slide-down .3s ease-out;
+        -moz-animation: slide-down .3s ease-out;
+        flex-direction: row;
+        display: flex;
+    }
+    
+    .section {
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 1%;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    .horizontale {
+        flex-direction: row;
+    }
+    
+    .icone {
+        font-size: 34px;
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+        border-top: 1px solid;
+    }
+    
+    .controller {
+        padding: 2%;
+        border: solid white 1px;
+        color: white;
+        background-color: #032f5d;
+        flex-grow: 1;
+        justify-content: center;
+        display: flex;
+        align-items: initial;
+        flex-direction: column;
+    }
+    
+    .vignette {
+        height: 24vh;
+        margin: 0.1%;
+        min-width: 10vw;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 2px solid #032f5d;
+        flex-grow: 1;
+    }
+    
+    .contenu span {
+        background: #032f5d94;
+        width: 100%;
+    }
+    
+    .second-row:focus {
+        background-color: rgba(50, 167, 75, 0.767) !important
+    }
+    
+    .arrow {
+        background: none;
+        position: relative;
+        height: 10vh;
+        border: none !important;
+        border: 1px solid;
+    }
+    
+    .intranet-content .block-title {
+        display: none;
+    }
+    
+    .intranet-content .region-content p {
+        margin: 0 !important;
+        padding: 1% 2%;
+    }
+    
+    .block-title .header-school {
+        margin-bottom: 0;
+        margin-top: 1em;
+        font-size: 32.5px;
+        color: #032f71;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        border: 2px solid #032f5d;
+        padding: 1%;
+        text-align: center;
+        font-style: normal;
+    }
+    
+    .block-title>p {
+        text-align: right;
+    }
+    
+    .block-title .abbreviation {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: rgb(3, 47, 93);
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        letter-spacing: 1.9px;
+        text-align: right;
+    }
+    
+    .page-body p,
+    .page-body ul li,
+    .page-body ol li,
+    ul.public li {
+        font-size: 14px;
+        text-align: justify;
+        color: #032f5d;
+        line-height: 1.8;
+        margin: 3%;
+        list-style: inside;
+    }
+    
+    .page-body h4 {
+        font-size: 17px;
+        text-align: center;
+        padding: 2%;
+    }
+    
+    ul.public {
+        background: #edf1f3;
+        border: 1px solid #032f5d;
+        border-left: 2px solid #032f5d;
+    }
+    
+    .page-body h5 {
+        font-size: 17px;
+        border: 1px solid;
+        text-align: center;
+        padding: 10px 30px 39px;
+        margin-bottom: -30px;
+    }
+    
+    .img-container {
+        background-position-y: 68%;
+        height: 318px;
+    }
+    
+    .mySlides h3 {
+        font-size: 20px;
+        margin-top: 35%;
+        background-color: #ffffffa8;
+        padding: 2%;
+    }
+    
+    .titre {
+        margin-right: -2%;
+        padding: 1.4% 3% 1.4% 1.4%;
+        color: #ffffff !important;
+        background-color: #032f5dd1;
+    }
+    
+    .illu {
+        font-size: 88px;
+        background: none !important;
+        border: none;
+    }
+    
+    #demande-en-ligne {
+        padding: 4%;
+        text-transform: uppercase;
+        color: #032f5d;
+        background: #edf1f3;
+        font-weight: 700;
+        border: 3px solid #032f5d;
+    }
+    
+    #demande-en-ligne:hover {
+        background: #00214e;
+        color: white;
+    }
+    
+    .sous-titre {
+        max-width: 8%;
+        background: #88bd24e6;
+    }
+    
+    .wrapper {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .image-gallery {
+        margin: 0 auto;
+        display: flex;
+    }
+    
+    .primary,
+    .thumbnails {
+        display: table-cell;
+    }
+    
+    .thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        width: 38%;
+    }
+    
+    .thumbnail {
+        border: 0;
+        margin: 0;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-grow: 1;
+        padding: 2%;
+        background: #edf1f3;
+        max-height: 17vw;
+    }
+    
+    .primary {
+        width: 100vw;
+        height: 400px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 5px;
+        border-style: solid;
+        border-color: #add168;
+    }
+    
+    .thumbnail:hover .thumbnail-image,
+    .selected .thumbnail-image {
+        border: 4px solid #032f5d;
+    }
+    
+    .thumbnail-image {
+        width: 16vw;
+        display: flex;
+        flex-grow: 1;
+        height: 100%;
+        margin: 0;
+        max-height: 17vw;
+        padding: 0;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 4px solid transparent;
+    }
+    
+    br {
+        display: none;
+    }
+    
+    table {
+        width: 100%;
+        margin: 0 1%;
+    }
+    
+    tr.table-header {
+        background: #032f5d
+    }
+    
+    .table-header p {
+        color: #edf1f3 !important;
+    }
+    
+    .table-header td {
+        border: 1px solid #032f5d;
+    }
+    
+    tr.table-content {
+        background: #edf1f3
+    }
+    
+    .table-content td {
+        border: 1px solid #032f5d;
+    }
+    
+    table p {
+        text-align: center !important;
+    }
+</style>
+<div class="rangee " style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/F44Q8209.JPEG?itok=r78ym2Wv');justify-content:flex-end;align-items: flex-end;height: 26vh;background-repeat: no-repeat;padding: 2% 0;background-size: cover;background-position-y: 48%;">
+    <h2 class="titre">Flat</h2>
+
+    <div class="sous-titre"><img alt="" src="//cdn.uclouvain.be/groups/cms-editors-loge/logos/LOGE-Logo-Blanc.png?itok=o8bzr9P4" /></div>
+</div>
+
+<h4>Plusieurs types de logements sont disponibles mais NE SONT PAS accessibles à tous</h4>
+
+<div class="image-gallery">
+    <aside class="thumbnails">
+        <a class="selected thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN003.jpg?itok=1GxCoJ1F"><br>
+            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN003.jpg?itok=1GxCoJ1F)"></div>
+        </a>
+        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/DSC_1019.JPEG?itok=zl_dNdFN"><br>
+            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/DSC_1019.JPEG?itok=zl_dNdFN)"></div>
+        </a>
+        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/DSC_1009.JPEG?itok=Jo07yi9T"><br>
+            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/DSC_1009.JPEG?itok=Jo07yi9T)"></div>
+        </a>
+        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN064.jpg?itok=Ugw20T1w"><br>
+            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN064.jpg?itok=Ugw20T1w)"></div>
+        </a>
+        <a class="thumbnail" data-big="//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN159.jpg?itok=emiTekhB"><br>
+            <div class="thumbnail-image" style="background-image: url(//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN159.jpg?itok=emiTekhB)"></div>
+        </a>
+    </aside>
+    <main class="primary" style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/logements/flat/UCL%20vie%20LLN003.jpg?itok=1GxCoJ1F');"></main>
+</div>
+
+<p><strong>La chambre flat<em>&nbsp;</em></strong>est meublée et équipée d'un coin cuisine et une douche ; seules les toilettes sont communes.</p>
+
+<p>Elle est réservée <strong>prioritairement</strong> aux étudiants<strong>&nbsp;de deuxième et troisième cycles.</strong></p>
+
+<div class="rangee" style="justify-content:center">
+    <table style="width:56%">
+        <tbody>
+            <tr class="table-header">
+                <td colspan="2" style="width: 75%;">
+                    <p>Contrat 12 mois</p>
+                </td>
+            </tr>
+            <tr class="table-content">
+                <td style="width: 52.2414%;">
+                    <p>Loyer mensuel</p>
+
+                    <p style="font-size: 10px;padding: 0;">(charges comprises*)</p>
+                </td>
+                <td style="width: 22.7586%;">
+                    <p>Garantie</p>
+                </td>
+            </tr>
+            <tr class="table-content">
+                <td style="width: 52.2414%;">
+                    <p>320 € à 400 €</p>
+                </td>
+                <td style="width: 22.7586%;">
+                    <p>150 €</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>* hors connexion Internet</p>
+<script>
+    $('.thumbnail').on('click', function() {
+        var clicked = $(this);
+        var newSelection = clicked.data('big');
+        var $img = $('.primary').css("background-image", "url(" + newSelection + ")");
+        clicked.parent().find('.thumbnail').removeClass('selected');
+        clicked.addClass('selected');
+        $('.primary').empty().append($img.hide().fadeIn('slow'));
+    });
+</script>

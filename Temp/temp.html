@@ -1,0 +1,247 @@
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" />
+<style type="text/css">
+    .rangee {
+        justify-content: space-between;
+        align-items: center;
+        -webkit-animation: slide-down .3s ease-out;
+        -moz-animation: slide-down .3s ease-out;
+        flex-direction: row;
+        display: flex;
+        width: 100%;
+    }
+    
+    .section {
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 1%;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    .horizontale {
+        flex-direction: row;
+    }
+    
+    .icone {
+        font-size: 34px;
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+        border-top: 1px solid;
+    }
+    
+    button {
+        padding: 2%;
+        border: solid white 1px;
+        color: white;
+        background-color: #032f5d;
+        flex-grow: 1;
+        justify-content: center;
+        display: flex;
+        align-items: initial;
+        flex-direction: column;
+    }
+    
+    .controller {}
+    
+    .vignette {
+        height: 24vh;
+        margin: 0.1%;
+        min-width: 10vw;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 2px solid #032f5d;
+        flex-grow: 1;
+    }
+    
+    .contenu span {
+        background: #032f5d94;
+        width: 100%;
+    }
+    
+    .second-row:focus {
+        background-color: rgba(50, 167, 75, 0.767) !important
+    }
+    
+    .arrow {
+        background: none;
+        position: relative;
+        height: 10vh;
+        border: none !important;
+        border: 1px solid;
+    }
+    
+    .intranet-content .block-title {
+        display: none;
+    }
+    
+    .block-title .header-school {
+        margin-bottom: 0;
+        margin-top: 1em;
+        font-size: 32.5px;
+        color: #032f71;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        border: 2px solid #032f5d;
+        padding: 1%;
+        text-align: center;
+        font-style: normal;
+    }
+    
+    .block-title>p {
+        text-align: right;
+    }
+    
+    .block-title .abbreviation {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: rgb(3, 47, 93);
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        letter-spacing: 1.9px;
+        text-align: right;
+    }
+    
+    .page-body p,
+    .page-body ul li,
+    .page-body ol li,
+    ul.public li {
+        font-size: 14px;
+        text-align: justify;
+        color: #032f5d;
+        line-height: 1.8;
+        margin: 3%;
+        list-style: inside;
+    }
+    
+    ul.public {
+        background: #edf1f3;
+        border: 1px solid #032f5d;
+        border-left: 2px solid #032f5d;
+    }
+    
+    .page-body h5 {
+        font-size: 17px;
+        border: 1px solid;
+        text-align: center;
+        padding: 2%
+    }
+    
+    .img-container {
+        background-position-y: 68%;
+        height: 318px;
+    }
+    
+    .mySlides h3 {
+        font-size: 20px;
+        margin-top: 35%;
+        background-color: #ffffffa8;
+        padding: 2%;
+    }
+    
+    .titre {
+        margin-right: -2%;
+        padding: 1.4% 3% 1.4% 1.4%;
+        color: #ffffff !important;
+        background-color: #032f5dd1;
+    }
+    
+    .illu {
+        font-size: 88px;
+        background: none !important;
+        border: none;
+    }
+    
+    #demande-en-ligne {
+        padding: 4%;
+        text-transform: uppercase;
+        color: #032f5d;
+        background: #edf1f3;
+        font-weight: 700;
+        border: 3px solid #032f5d;
+    }
+    
+    #demande-en-ligne:hover {
+        background: #00214e;
+        color: white;
+    }
+    
+    .sous-titre {
+        max-width: 8%;
+        background: #88bd24e6;
+    }
+</style>
+<div class="rangee " style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-sic/sic/sic---drupal/2017-2018/fr/Collage%20acc2.jpg?itok=_Dpr6v29');justify-content:flex-end;align-items: flex-end;height: 26vh;padding: 2% 0;">
+    <h2 class="titre">Se loger à Louvain-la-Neuve</h2>
+
+    <div class="sous-titre"><img alt="" src="//cdn.uclouvain.be/groups/cms-editors-loge/logos/LOGE-Logo-Blanc.png?itok=o8bzr9P4" /></div>
+</div>
+
+<h4>Plusieurs types de logements sont disponibles. Merci de noter que tous les types de logements NE SONT accessibles pour certains type de publics</h4>
+
+<div class="rangee "><button class="controller first-row etudiant" data-section="etudiant">ETUDIANTS<span class="fas fa-user-graduate icone"></span></button><button class="controller first-row" data-section="boursier">BOURSIERS-CHERCHEURS<span class="fas fa-flask icone"></span></button></div>
+
+<div class="rangee"><button class="controller first-row" data-section="professeur">PROFESSEUS INVITES<span class="fas fa-chalkboard-teacher icone"></span></button></div>
+
+<div class="rangee section" data-section="etudiant belge international erasmus spec" style="flex-direction:row;"><button class="controller second-row" data-section="belge">BELGE<span class="fas fa-chalkboard-teacher"></span></button><button class="controller second-row" data-section="international">INTERNATIONAL REGULIER<span class="fas fa-globe"></span></button>
+    <button
+        class="controller second-row" data-section="erasmus">Erasmus<span class="fas fa-globe-europe"></span></button><button class="controller second-row" data-section="spec">PROFILS PARTICULIERS (PMR,Sportifs,..)<span class="fab fa-accessible-icon"></span></button></div>
+
+<div class="rangee section" data-section="belge international erasmus boursier professeur">
+    <h5>Quels type de logements ?</h5>
+
+    <div class="rangee contenu">
+        <button class="contenu" data-section="belge international erasmus boursier professeur"><span>Chambre en appartement communautaire</span></button>
+        <button class="contenu" data-section="belge international erasmus"><span>Chambre dans un kot à projet</span></button>
+        <button class="contenu" data-section="belge international boursier professeur"><span>Flat</span></button>
+        <button class="contenu" data-section="belge international boursier professeur"><span>Studio</span></button>
+        <button class="contenu" data-section="belge international boursier professeur"><span>Appartement</span></button>
+    </div>
+
+    <h5>Qui ?</h5>
+
+    <div class="rangee">
+        <div class="rangee contenu" data-section="contenu belge"><span class="fas fa-user-graduate icone illu"></span></div>
+
+        <div class="rangee contenu" data-section="contenu belge" style="width: 53%;align-self: flex-end;margin: 0% -1% 0 0;">
+            <ul class="public">
+                <li>Etudiant·e belge</li>
+                <li>Etudiant·e non belge, mais ayant un domicile en Belgique</li>
+                <li>Etudiant·e non belge, inscrit dans un cursus universitaire belge</li>
+            </ul>
+        </div>
+    </div>
+    <button data-section="belge" id="demande-en-ligne">Introduire ma demande logement</button>
+    <script>
+        $(document).ready(function() {
+            var toFilter = $('.content[data-profil]');
+            toFilter.css("display", "none");
+            $(".controller").click(function() {
+                var notThis = $(".controller").not($(this));
+                var verynotThis = notThis.not(".second-row");
+                verynotThis.css("background-color", "#4638384d");
+                $(this).css("background-color", "#032f5d");
+                $(".second-row").css("background-color", "#032f5d");
+                $('.section[data-section]').css("display", "none");
+                $('.contenu[data-section]').css("display", "none");
+                var sectiontoshow = $(this).attr("data-section");
+                $("[data-section*='" + sectiontoshow + "']").css("display", "flex");
+                if ($(this).is(".second-row")) {
+                    $(".etudiant").css("background-color", "#032f5d");
+                    $(".second-row").css("background-color", "#4638384d");
+                    var sectiontoshow = $(this).attr("data-section");
+                    $("[data-section*='" + sectiontoshow + "']").css("display", "flex");
+                }
+            });
+        });
+    </script>
+</div>

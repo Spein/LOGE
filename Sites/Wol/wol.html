@@ -1,0 +1,391 @@
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" />
+<style type="text/css">
+    .rangee {
+        justify-content: space-between;
+        align-items: center;
+        -webkit-animation: slide-down .3s ease-out;
+        -moz-animation: slide-down .3s ease-out;
+        flex-direction: row;
+        display: flex;
+    }
+    
+    .section {
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 1%;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    .icone {
+        font-size: 34px;
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+        border-top: 1px solid;
+    }
+    
+    button {
+        padding: 2%;
+        border: solid white 1px;
+        color: white;
+        background-color: #032f5d;
+        flex-grow: 1;
+        justify-content: center;
+        display: flex;
+        align-items: initial;
+        flex-direction: column;
+    }
+    
+    .logement:hover {
+        border: solid #032f5d 3px;
+        font-weight: 700;
+        background-size: cover;
+        color: white;
+        background-repeat: no-repeat;
+        flex-grow: 100;
+    }
+    
+    .logement {
+        height: 10vh;
+    }
+    
+    .vignette {
+        height: 24vh;
+        margin: 0.1%;
+        min-width: 10vw;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 2px solid #032f5d;
+        flex-grow: 1;
+    }
+    
+    .second-row:focus {
+        background-color: rgb(146, 193, 56) !important
+    }
+    
+    #warning {
+        display: none;
+        color: rgb(224, 63, 63);
+    }
+    
+    .arrow {
+        background: none;
+        position: relative;
+        height: 10vh;
+        border: none !important;
+        border: 1px solid;
+    }
+    
+    .intranet-content .block-title {
+        display: none;
+    }
+    
+    .block-title .header-school {
+        margin-bottom: 0;
+        margin-top: 1em;
+        font-size: 32.5px;
+        color: #032f71;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        border: 2px solid #032f5d;
+        padding: 1%;
+        text-align: center;
+        font-style: normal;
+    }
+    
+    .block-title>p {
+        text-align: right;
+    }
+    
+    .block-title .abbreviation {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: rgb(3, 47, 93);
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        letter-spacing: 1.9px;
+        text-align: right;
+    }
+    
+    .page-body p,
+    .page-body ul li,
+    .page-body ol li,
+    ul.public li {
+        font-size: 14px;
+        text-align: justify;
+        color: #032f5d;
+        line-height: 1.8;
+        margin: 3%;
+    }
+    
+    .public.right {
+        border-right: 3px solid #032f5d;
+    }
+    
+    .public.left {
+        border-left: 3px solid #032f5d;
+    }
+    
+    ul.public {
+        background: #edf1f3;
+        border: 1px solid #032f5d;
+        min-width: 15vw;
+    }
+    
+    .page-body h5 {
+        font-size: 17px;
+        border: 1px solid;
+        text-align: center;
+        padding: 2%
+    }
+    
+    .img-container {
+        background-position-y: 68%;
+        height: 318px;
+    }
+    
+    .mySlides h3 {
+        font-size: 20px;
+        margin-top: 35%;
+        background-color: #ffffffa8;
+        padding: 2%;
+    }
+    
+    .titre {
+        margin-right: -2%;
+        padding: 1.4% 3% 1.4% 1.4%;
+        color: #ffffff !important;
+        background-color: #032f5dd1;
+    }
+    
+    .illu {
+        font-size: 70px;
+        border: none;
+        border: 2px solid;
+        margin: -2% 5% 0;
+        color: #032f5d;
+        min-width: 7vw;
+        padding: 2%;
+    }
+    
+    .demande-en-ligne {
+        padding: 4%;
+        text-transform: uppercase;
+        color: #032f5d;
+        background: #edf1f3;
+        font-weight: 700;
+        border: 3px solid #032f5d;
+    }
+    
+    #demande-en-ligne:hover {
+        background: #00214e;
+        color: white;
+    }
+    
+    .sous-titre {
+        max-width: 8%;
+        background: #88bd24e6;
+    }
+    
+    #kot:hover {
+        background-image: url('https://www.kotalouvain.be/img/louvain/residence/lovano-ladeuze/miniloft-large.jpg?v55');
+        background-position-y: 69%;
+    }
+    
+    #kap:hover {
+        background-image: url('https://www.generation-campus.be/medias/images/residences-services/lovano-campus/mini-flat/IMG-lovano-mini-flat-01.jpg');
+        background-position-y: 77%;
+    }
+    
+    #studio:hover {
+        background-image: url('https://www.kotalouvain.be/img/louvain/residence/lovano-ladeuze/miniloft-large.jpg?v55');
+        background-position-y: 18%;
+    }
+    
+    #appart:hover {
+        background-image: url('https://www.generation-campus.be/uploads/slider/28/kot-louvain-la-neuve-4.jpg');
+        background-position-y: 18%;
+    }
+    
+    .logement:hover span {
+        background: #032f5dc7 !important;
+        margin: 0 -18px !important;
+    }
+</style>
+<div class="rangee " style="background-image: url('//cdn.uclouvain.be/groups/cms-editors-loge/logos/sites/wol/GLE_8568%202_DxO.JPEG?itok=WjDJcg1a');justify-content:flex-end;align-items: flex-end;background-size: cover;background-position: 0px 62%;background-repeat: no-repeat;height: 26vh;padding: 2% 0;">
+    <h2 class="titre">Se loger à Bruxelles-Woluwé</h2>
+
+    <div class="sous-titre"><img alt="" src="//cdn.uclouvain.be/groups/cms-editors-loge/logos/LOGE-Logo-Blanc.png?itok=o8bzr9P4" /></div>
+</div>
+
+
+<div class="rangee "><button class="controller first-row etudiant" data-section="etudiant" id="etudiant">ETUDIANTS<span class="fas fa-user-graduate icone"></span></button></div>
+
+<div class="rangee"><button class="controller first-row" data-section="boursier">BOURSIERS-CHERCHEURS<span class="fas fa-flask icone"></span></button><button class="controller first-row" data-section="professeur">PROFESSEUS INVITES<span class="fas fa-chalkboard-teacher icone"></span></button></div>
+
+<div class="rangee section" data-section="etudiant belge international erasmus spec" style="flex-direction:row;"><button class="controller second-row" data-section="belge">BELGE<span class="fas fa-chalkboard-teacher"></span></button><button class="controller second-row" data-section="international">INTERNATIONAL REGULIER<span class="fas fa-globe"></span></button>
+    <button class="controller second-row" data-section="erasmus">Erasmus<span class="fas fa-globe-europe"></span></button><button class="controller second-row" data-section="spec">PROFILS PARTICULIERS (PMR,Sportifs,..)<span class="fab fa-accessible-icon"></span></button></div>
+<div class="rangee contenu" data-section="contenu spec" style="flex-direction: column;display:none;">
+    <p style="margin:0">L'UCLouvain propose des logements de type communautaire ou individuel à tout étudiant ayant un profil spécifique, tel que :</p>
+
+    <ul>
+        <li>personne à mobilité réduite (PMR)</li>
+        <li>personne ayant un handicap de type sensoriel</li>
+        <li>personne atteinte d'une maladie invalidante</li>
+        <li>sportif de haut niveau</li>
+        <li>autres</li>
+    </ul>
+    <p>Notre service collabore avec l'équipe Aide-Handi du Service d'aide aux étudiants, le Service des sports, qui réalisent un accueil et un accompagnement pour les personnes à profil spécifique et veillent à mettre en place un dispositif personnalisé,
+        si nécessaire.</p>
+
+    <div class="rangee" style="flex-direction: column;">
+    </div>
+</div>
+
+<div class="rangee section contenu" data-section="etudiant" style="border-right: 1px solid;border-bottom: 1px solid;border-left: 1px solid;margin: -1.71% 43px 0 3%;padding: 1%;width: 92.8%;border-top: none;">
+    <h6>Merci de choisir votre profil parmi ceux proposés ci-dessus</h6>
+</div>
+
+<div class="rangee section" data-section="belge international erasmus boursier professeur">
+    <h5>Quels types de logements ?</h5>
+    <h4>Plusieurs types de logements sont disponibles mais pas accessibles à tous.</h4>
+    <div class="rangee contenu" style="width: 100%;flex-wrap:wrap"><button class="contenu logement" data-section="belge international erasmus boursier professeur" id="kot"><span>Chambre en appartement communautaire</span></button><button class="contenu logement" data-section="belge international erasmus" id="kap"><span>Chambre dans un kot à projet</span></button>
+        <button class="contenu logement" data-section="belge international boursier professeur" id="studio"><span>Studio</span></button><button class="contenu logement" data-section="belge international boursier professeur" id="appart"><span>Appartement</span></button></div>
+    <div class="rangee contenu">
+        <div class="rangee contenu">
+            <h6 id="warning">Les bacheliers n'ont pas accès à ce logement</h6>
+        </div>
+    </div>
+
+    <h5 style="margin-top: 5%;">Qui ?</h5>
+
+    <div class="rangee" style="justify-content:flex-end"><span class="fas fa-user-graduate icone illu"></span>
+
+        <div class="rangee contenu" data-section="contenu belge">
+            <ul class="public left">
+                <li>Etudiant·e <strong>belge</strong></li>
+                <li>Etudiant·e non belge, mais <strong> ayant un domicile en Belgique</strong></li>
+                <li>Etudiant·e non belge, inscrit dans un <strong>cursus universitaire belge </strong></li>
+            </ul>
+        </div>
+
+        <div class="rangee contenu" data-section="contenu international">
+            <ul class="public left">
+                <li>Etudiant international inscrit<strong> pour une année d'études</strong></li>
+                <li>Etudiant international inscrit<strong> pour un programme complet d'études</strong></li>
+            </ul>
+        </div>
+
+        <div class="rangee contenu" data-section="contenu erasmus">
+            <ul class="public left ">
+                <li>Erasmus</li>
+                <li>Convention bilatérale</li>
+                <li>Autres …</li>
+            </ul>
+        </div>
+
+        <div class="rangee contenu" data-section="contenu boursier">
+            <ul class="public left">
+                <li>Chercheur</li>
+                <li>Stagiaire</li>
+                <li>Boursier international</li>
+            </ul>
+        </div>
+
+        <div class="rangee contenu" data-section="contenu professeur">
+            <ul class="public left">
+                <li>Professeur invité</li>
+                <li>Collaborateurs</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rangee contenu" data-section="contenu belge" style="flex-direction:column;">
+        <div class="rangee">
+            <h5>Priorités d'accès</h5>
+        </div>
+
+        <div class="rangee" style="justify-content:flex-end;flex-direction: row-reverse"><span class="fas fa-tasks icone illu"></span>
+
+            <ul class="public right">
+                <li>Etudiant·e s'inscrivant pour la <strong>première fois</strong> à l'UCLouvain</li>
+                <li>Bénéficiaire d'une<a href="https://cdn.uclouvain.be/groups/cms-editors-aide/images-diverses/formulaire%20AIDE%20loyer%20-2019-WEB_0.pdf"><strong> réduction de loyer</strong></a></li>
+                <li><strong>Distance du domicile </strong> par rapport au site universitaire</li>
+            </ul>
+        </div>
+    </div>
+    <button data-section="contenu belge international erasmus boursier professeur" class="contenu demande-en-ligne" onclick="window.location.href='http://wwwsapprd.sipr.ucl.ac.be/re/bxl/index.html?sap-ui-language=FR'">Demande de logements en ligne</button>
+</div>
+
+<div class="rangee" style="justify-content: flex-end;">
+    <div class="rangee" style="flex-direction: column;margin-top: 5%;flex-wrap: wrap;">
+        <h3 style="margin: 0;padding: 1%;/* font-size: 17px; */align-self: stretch;text-align: center;color: white;background: #92c138b0;/* width: 18.4vw; */">CONTACT</h3>
+        <div class="rangee" style="border: 1px solid #aed0725c;flex-wrap: nowrap;">
+            <p style="margin: 0;background-color: white;justify-self: center;align-self: stretch;padding: 4%;">Promenade de l’Alma, 31<br>B-1200 Bruxelles<br>Tél +32 (0)2 764 41 20 ou 22<br><a href="mailto:inforlogementbxl@uclouvain.be">inforlogementbxl@uclouvain.be</a></p>
+            <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.994918524776!2d4.45049421591005!3d50.849778366391256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dc8402408cb7%3A0x71d5798f108de2ee!2sProm.+de+l'Alma+31%2C+1200+Woluwe-Saint-Lambert!5e0!3m2!1sfr!2sbe!4v1551275784927"
+                style="border:0" style="max-width: 17vw;border:0;"></iframe></div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        var toFilter = $('.content[data-profil]');
+        toFilter.css("display", "none");
+        $(".controller").click(function() {
+            var notThis = $(".controller").not($(this));
+            var verynotThis = notThis.not(".second-row");
+            verynotThis.css("background-color", "#4638384d");
+            $(this).css("background-color", "#032f5d");
+            $(".second-row").css("background-color", "#032f5d");
+            $('.section[data-section]').css("display", "none");
+            $('.contenu[data-section]').css("display", "none");
+            var sectiontoshow = $(this).attr("data-section");
+            $("[data-section*='" + sectiontoshow + "']").css("display", "flex");
+            if ($(this).is(".second-row")) {
+                $(".etudiant").css("background-color", "#032f5d");
+                $(".second-row").css("background-color", "#4638384d");
+                var sectiontoshow = $(this).attr("data-section");
+                $("[data-section*='" + sectiontoshow + "']").css("display", "flex");
+            }
+        });
+
+        $('#studio').mouseenter(
+            function() {
+                var $color = $('#etudiant').css("background-color")
+                if ($color == 'rgb(3, 47, 93)') {
+                    $("#warning").css('display', 'flex');
+
+                }
+
+            })
+        $('#studio').mouseleave(
+            function() {
+                $("#warning").css('display', 'none');
+            }
+        )
+
+        $('#appart').mouseenter(
+            function() {
+                var $color = $('#etudiant').css("background-color")
+                if ($color == 'rgb(3, 47, 93)') {
+                    $("#warning").css('display', 'flex');
+                }
+
+            })
+        $('#appart').mouseleave(
+            function() {
+                $("#warning").css('display', 'none');
+            }
+        )
+
+    });
+</script>
